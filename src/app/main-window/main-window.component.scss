@@ -1,0 +1,19 @@
+@import '../content.scss';
+
+#TopBar {
+    align-items: center;
+    // border: 2px $color-accent solid;
+    height: 50px;
+    justify-content: center;
+    // margin-bottom: 20px;
+}
+
+input {
+    background-color: $color-secondary;
+    border: none;
+    border-radius: 15px;
+    color: $color-text;
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+}

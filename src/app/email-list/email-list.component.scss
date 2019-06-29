@@ -1,0 +1,25 @@
+@import '../colors.scss';
+
+.container-fluid {
+    padding: 0;
+    padding-top: 20px;
+}
+
+.row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.row:hover {
+    background-color: $color-secondary;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.col-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

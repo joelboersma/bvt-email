@@ -1,0 +1,43 @@
+@import '../content.scss';
+
+img {
+    border-radius: 50%;
+    height: 100px;
+}
+
+#name {
+    font-weight: 600;
+    color: $color-text;
+    font-size: 30px;
+}
+
+#email {
+    color: $color-grey;
+    font-size: 16px;
+}
+
+button {
+    background-color: $color-accent;
+    border: none;
+    border-radius: 10px;
+    color: $color-text;
+    cursor: pointer;
+    font-size: 24px;
+    height: 54px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: $color-hover;
+}
+
+#Groups {
+    color: $color-text;
+    cursor: default;
+    font-size: 18px;
+    height: 32px;
+    margin-left: 20px;
+    margin-top: 10px;
+}

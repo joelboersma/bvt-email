@@ -1,0 +1,22 @@
+@import './colors.scss';
+
+.container-fluid {
+    padding: 20px;
+}
+
+.fa {
+    color: $color-accent;
+    font-size: 20px;
+}
+
+.fa-caret-right {
+    font-size: 28px;
+}
+
+.fa-caret-left {
+    font-size: 28px;
+}
+
+.fa-caret-down {
+    font-size: 28px;
+}

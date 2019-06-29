@@ -1,0 +1,27 @@
+@import '../content.scss';
+
+.container-fluid {
+    padding: 0;
+    cursor: default;
+}
+
+#Sender {
+    color: $color-text;
+}
+
+#Date {
+    display: flex;
+    color: $color-grey;
+
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+#Subject {
+    color: $color-text;
+    font-size: 20px;
+}
+
+#Message {
+    color: $color-text;
+}

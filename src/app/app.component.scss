@@ -1,15 +1,17 @@
 @import './colors.scss';
 
 .container-fluid {
+    background-color: $color-primary;
     font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
 }
 
-.col-5 {
-    height: 100vh;
+#sidebar {
+    height: 100%;
     background-color: $color-secondary;
 }
 
-.col-7 {
-    height: 100vh;
+#main-window {
+    height: 100%;
     background-color: $color-primary;
 }

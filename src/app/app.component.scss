@@ -6,12 +6,22 @@
     height: 100vh;
 }
 
-#sidebar {
+#sidebar-md {
+    height: 100vh;
+    background-color: $color-secondary;
+}
+
+#main-window-md {
+    height: 100%;
+    background-color: $color-primary;
+}
+
+#sidebar-sm {
     height: 100%;
     background-color: $color-secondary;
 }
 
-#main-window {
+#main-window-sm {
     height: 100%;
     background-color: $color-primary;
 }

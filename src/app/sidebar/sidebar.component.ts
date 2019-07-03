@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+  public windowWidth: any;
 
   constructor() { }
 
   ngOnInit() {
+    this.windowWidth = window.innerWidth;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  whenResize(event) {
+    this.windowWidth = window.innerWidth;
+  }
+
+  useBigView(): boolean {
+    return this.windowWidth >= 768;
   }
 
 }

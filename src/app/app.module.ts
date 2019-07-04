@@ -6,6 +6,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainWindowComponent } from './main-window/main-window.component';
 import { EmailListComponent } from './email-list/email-list.component';
 import { EmailComponent } from './email/email.component';
+import { ColorChangeDirective } from './color-change.directive';
+import { IconChangeDirective } from './icon-change.directive';
+import { BadgeAddDirective } from './badge-add.directive';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,10 @@ import { EmailComponent } from './email/email.component';
     SidebarComponent,
     MainWindowComponent,
     EmailListComponent,
-    EmailComponent
+    EmailComponent,
+    ColorChangeDirective,
+    IconChangeDirective,
+    BadgeAddDirective
   ],
   imports: [
     BrowserModule

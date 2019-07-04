@@ -41,3 +41,14 @@ button:hover {
     margin-left: 20px;
     margin-top: 10px;
 }
+
+.badge {
+    //box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    position: relative;
+    border-radius: 10em;
+    background-color: $color-accent;
+    font-size: 12px;
+    color: $color-text;
+    left: auto;
+    top: -15px;
+}

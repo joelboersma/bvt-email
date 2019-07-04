@@ -8,6 +8,9 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class SidebarComponent implements OnInit {
   public windowWidth: any;
 
+  public itemWithBadge: string = "Inbox";
+  public badgeNumber: number = 2;
+
   constructor() { }
 
   ngOnInit() {

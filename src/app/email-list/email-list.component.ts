@@ -23,7 +23,7 @@ export class EmailListComponent implements OnInit {
   public emailContent2 = {
     subject: "Help Me",
     sender: "Nigerian Prince",
-    date: "May 17",
+    date: "April 20",
     message: "paypal me 30000 usd",
     listPos: 2
   };

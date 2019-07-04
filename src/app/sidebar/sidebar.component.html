@@ -22,7 +22,7 @@
     <!-- New Message -->
     <div class="row">
         <div class="col">
-            <button type="button">New Message</button>
+            <button type="button" appColorChange>New Message</button>
         </div>
     </div>
 
@@ -31,8 +31,9 @@
         <div class="col-2">
             <i class="fa fa-caret-down"></i>
         </div>
-        <div class="col-10">
-            <b>Inbox (2)</b>
+        <div class="col-10" appBadgeAdd [badgeNum]="badgeNumber" [itemName]="itemWithBadge">
+            Inbox
+            <!-- <span class="badge">2</span> -->
         </div>
     </div>
     <div class="row" id="Groups">

@@ -8,12 +8,25 @@
     // margin-bottom: 20px;
 }
 
-input {
+#SearchBar {
     background-color: $color-secondary;
-    border: none;
     border-radius: 15px;
-    color: $color-text;
-    height: 40px;
-    padding: 10px;
     width: 100%;
+
+    .fa {
+        color: $color-grey;
+        padding-right: 5px;
+    }
+
+    input {
+        background-color: $color-secondary;
+        border: none;
+        color: $color-text;
+        height: 40px;
+        padding-left: 5px;
+        width: 87%;
+    }    
 }
+
+
+

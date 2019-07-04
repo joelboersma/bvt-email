@@ -2,15 +2,20 @@
 
     <!-- Top Bar -->
     <div class="row" id="TopBar">
+
         <!-- Search Bar -->
-        <div class="col-8">
+        <div class="col-8" id="SearchBar">
+            <i class="fa fa-search" 
+            [appIconChange]="newIcon"></i>
             <input type="text" placeholder="Search">
         </div>
+
         <!-- Random Icons -->
         <div class="col-1"><i class="fa fa-caret-left"></i></div>
         <div class="col-1"><i class="fa fa-backward"></i></div>
         <div class="col-1"><i class="fa fa-caret-right"></i></div>
         <div class="col-1"><i class="fa fa-times"></i></div>
+    
     </div>
 
     <!-- Emails -->

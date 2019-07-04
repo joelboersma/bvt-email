@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-window.component.scss']
 })
 export class MainWindowComponent implements OnInit {
+  public newIcon = "fa-check-square"
 
   constructor() { }
 

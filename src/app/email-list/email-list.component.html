@@ -1,15 +1,22 @@
-<!--
-    Ok so here's the plan:
-        -Create an component "Email"
-        -4 instances of this class with different properties.
-            -read, title, sender, etc.
-        -Click on the bootstrap row, "read = !read"
-        -Output from Email to bootstrap row, change circle color
-            -$color-primary if true
-            -$color-accent if false
--->
-
 <div class="container-fluid">
+    <div class="row" *ngFor="let email of emails">
+        <div class="col-1" [ngStyle]="styles[0]">
+            <i class="fa fa-circle"></i>
+        </div>
+        <div class="col-11">
+            <app-email 
+            [subject]=email.subject
+            [sender]=email.sender
+            [date]=email.date
+            [message]=email.message
+            [listPos]=email.listPos
+            (readEmit)="toggleRead($event)">
+        </app-email>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container-fluid">
 
     <div class="row">
         <div class="col-1" [ngStyle]="styles[0]">
@@ -58,4 +65,4 @@
             </app-email>
         </div>
     </div>
-</div>
+</div> -->

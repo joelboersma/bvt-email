@@ -6,12 +6,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./email.component.scss']
 })
 export class EmailComponent implements OnInit {
-  @Input() emailContent;
-  public subject: string;
-  public sender: string;
-  public date: string;
-  public message: string;
-  public listPos: number;
+  //@Input() emailContent;
+  @Input() public subject: string;
+  @Input() public sender: string;
+  @Input() public date: string;
+  @Input() public message: string;
+  @Input() public listPos: number;
 
   public read: boolean = false;
   @Output() readEmit: EventEmitter<any> = new EventEmitter<any>();
@@ -21,11 +21,7 @@ export class EmailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.subject = this.emailContent.subject;
-    this.sender = this.emailContent.sender;
-    this.date = this.emailContent.date;
-    this.message = this.emailContent.message;
-    this.listPos = this.emailContent.listPos;
+    
   }
 
   onClick(): void {

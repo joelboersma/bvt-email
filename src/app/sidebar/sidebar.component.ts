@@ -7,9 +7,34 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   public windowWidth: any;
-
-  public itemWithBadge: string = "Inbox";
-  public badgeNumber: number = 2;
+  
+  public menuItems = [
+    {
+      name: "Inbox",
+      icon: "fa-caret-down",
+      badgeNum: 4
+    },
+    {
+      name: "Drafts",
+      icon: "fa-caret-right",
+      badgeNum: 0
+    },
+    {
+      name: "Sent",
+      icon: "fa-caret-right",
+      badgeNum: 3
+    },
+    {
+      name: "Spam",
+      icon: "fa-flag",
+      badgeNum: 999
+    },
+    {
+      name: "Trash",
+      icon: "fa-times",
+      badgeNum: 72
+    }
+  ];
 
   constructor() { }
 

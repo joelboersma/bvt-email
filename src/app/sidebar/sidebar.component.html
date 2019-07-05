@@ -27,46 +27,12 @@
     </div>
 
     <!-- Groups -->
-    <div class="row" id="Groups">
-        <div class="col-2">
-            <i class="fa fa-caret-down"></i>
-        </div>
-        <div class="col-10" appBadgeAdd [badgeNum]="badgeNumber" [itemName]="itemWithBadge">
-            Inbox
-            <!-- <span class="badge">2</span> -->
-        </div>
-    </div>
-    <div class="row" id="Groups">
-        <div class="col-2">
-            <i class="fa fa-caret-right"></i>
-        </div>
-        <div class="col-10">
-            Drafts
-        </div>
-    </div>
-    <div class="row" id="Groups">
-        <div class="col-2">
-            <i class="fa fa-caret-right"></i>
-        </div>
-        <div class="col-10">
-            Sent
-        </div>
-    </div>
-    <div class="row" id="Groups">
-        <div class="col-2">
-            <i class="fa fa-flag"></i>
-        </div>
-        <div class="col-10">
-            Spam
-        </div>
-    </div>
-    <div class="row" id="Groups">
-        <div class="col-2">
-            <i class="fa fa-times"></i>
-        </div>
-        <div class="col-10">
-            Trash
-        </div>
+    <div *ngFor="let menuItem of menuItems">
+        <app-menu-item 
+        [name]="menuItem.name"
+        [icon]="menuItem.icon"
+        [badgeNum]="menuItem.badgeNum">
+        </app-menu-item>
     </div>
 
 </div>

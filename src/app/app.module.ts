@@ -9,6 +9,7 @@ import { EmailComponent } from './email/email.component';
 import { ColorChangeDirective } from './color-change.directive';
 import { IconChangeDirective } from './icon-change.directive';
 import { BadgeAddDirective } from './badge-add.directive';
+import { MenuItemComponent } from './menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BadgeAddDirective } from './badge-add.directive';
     EmailComponent,
     ColorChangeDirective,
     IconChangeDirective,
-    BadgeAddDirective
+    BadgeAddDirective,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule

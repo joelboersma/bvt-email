@@ -10,8 +10,6 @@ export class IconChangeDirective {
 
   @HostListener('click')
   changeIcon() {
-    console.log(this.newIcon);
     this.el.nativeElement.className = "fa " + this.newIcon;
-    console.log(this.el);
   }
 }

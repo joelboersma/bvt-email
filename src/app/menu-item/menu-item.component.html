@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <i class="{{ icon }}"></i>
+        </div>
+        <div class="col-10" [appBadgeAdd]="badgeID">
+            {{ name }}
+            <span hidden id="{{ badgeID }}" class="badge">
+                {{ badgeNum }}
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row" *ngFor="let email of emails">
-        <div class="col-1" [ngStyle]="styles[0]">
+        <div class="col-1" [ngStyle]="email.style">
             <i class="fa fa-circle"></i>
         </div>
         <div class="col-11">

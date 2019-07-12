@@ -1,0 +1,13 @@
+@import '../content.scss';
+
+.container-fluid {
+    background-color: $color-primary;
+    color: $color-text;
+    height: 100vh;
+}
+
+.mainButton {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}

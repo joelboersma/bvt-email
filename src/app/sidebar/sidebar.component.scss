@@ -17,18 +17,5 @@ img {
 }
 
 button {
-    background-color: $color-accent;
-    border: none;
-    border-radius: 10px;
-    color: $color-text;
-    cursor: pointer;
-    font-size: 24px;
-    height: 54px;
-    margin-top: 20px;
     margin-bottom: 20px;
-    width: 100%;
-}
-
-button:hover {
-    background-color: $color-hover;
 }

@@ -1,0 +1,45 @@
+<div class="container-fluid d-flex justify-content-center align-items-center">
+	<div class="row justify-content-center">
+    <div class="col form-box">
+			<h2 class="formTitle">Create Account</h2>
+
+			<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+					<label>Name</label>
+					<input type="text" formControlName="name" class="form-control formTextBox">
+					<span *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched" class="formError">Name required</span>
+				</div>
+        
+				<div class="form-group">
+					<label>Email</label>
+					<input type="text" formControlName="email" class="form-control formTextBox">
+					<span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched" class="formError">Invalid Email</span>
+				</div>
+	
+				<div class="form-group">
+					<label>Password</label>
+					<input type="password" formControlName="password" class="form-control formTextBox">
+					<span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched" class="formError">
+						Invalid Password (minimum 8 characters)
+					</span>
+        </div>
+        
+        <div class="form-group">
+					<label>Retype Password</label>
+					<input type="password" formControlName="retypePassword" class="form-control formTextBox">
+					<span *ngIf="signupForm.get('retypePassword').touched && !passwordMatch()" class="formError">Passwords do not match</span>
+				</div>
+
+				<button class="mainButton" type="submit" 
+					[disabled]="!signupForm.valid || !passwordMatch()">
+					Sign Up
+				</button>
+
+			</form>
+
+			<p class="formSecondary">Already have an account? Log in.</p>
+
+    </div>   
+	</div>
+</div>

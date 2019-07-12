@@ -1,6 +1,7 @@
 @import './colors.scss';
 
 .container-fluid {
+    font-family: 'Ubuntu', sans-serif;
     padding: 20px;
 }
 
@@ -19,4 +20,62 @@
 
 .fa-caret-down {
     font-size: 28px;
+}
+
+.mainButton {
+    background-color: $color-accent;
+    border: none;
+    border-radius: 10px;
+    color: $color-text;
+    cursor: pointer;
+    font-size: 24px;
+    height: 54px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.mainButton:hover {
+    background-color: $color-hover;
+}
+
+.mainButton:disabled {
+    background-color: $color-grey;
+    cursor: not-allowed;
+}
+
+.formTextBox {
+    background-color: $color-form-textbox;
+    border: none;
+    border-radius: 30px;
+    color: $color-text;
+    font-size: 24px;
+    height: 100%;
+    padding: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+}
+
+.formError {
+    color: $color-error;
+}
+
+.form-box {
+    background-color: $color-secondary;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.formTitle {
+    display: flex;
+    break-after: always;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.formSecondary {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 0;
 }

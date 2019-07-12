@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -10,6 +11,9 @@ import { ColorChangeDirective } from './color-change.directive';
 import { IconChangeDirective } from './icon-change.directive';
 import { BadgeAddDirective } from './badge-add.directive';
 import { MenuItemComponent } from './menu-item/menu-item.component';
+import { FormLoginComponent } from './form-login/form-login.component';
+import { FormSignupComponent } from './form-signup/form-signup.component';
+import { FormMessageComponent } from './form-message/form-message.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +25,14 @@ import { MenuItemComponent } from './menu-item/menu-item.component';
     ColorChangeDirective,
     IconChangeDirective,
     BadgeAddDirective,
-    MenuItemComponent
+    MenuItemComponent,
+    FormLoginComponent,
+    FormSignupComponent,
+    FormMessageComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,8 +22,8 @@ export class FormMessageComponent implements OnInit {
       cc: [null, Validators.email],
       bcc: [null, Validators.email],
       subject: null,
-      message: null
-      // hyperlinks: []
+      message: [null, Validators.required]
+      // hyperlinks: new Array<string>("")
     });
   }
 

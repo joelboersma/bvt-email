@@ -5,19 +5,30 @@
       <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
 
         <div class="form-group">
+
           <input type="text" formControlName="to" class="form-control messageFormTextBox" placeholder="To">
+
           <input type="text" formControlName="cc" class="form-control messageFormTextBox" placeholder="CC">
+
           <input type="text" formControlName="bcc" class="form-control messageFormTextBox" placeholder="BCC">
+
           <input type="text" formControlName="subject" class="form-control messageFormTextBox" placeholder="Subject">
+
           <textarea rows="8" formControlName="message" class="form-control messageFormTextBox" placeholder="Message"></textarea>
-          <!-- <div *ngFor="let link of hyperlinks">
-            <input type="text" formControlName="hyperlinks[0]" class="form-control messageFormTextBox" placeholder="hyperlink">
-          </div> -->
+
+          <ng-container *ngFor="let link of hyperlinks">
+              <input type="text" [value]="link" class="form-control messageFormTextBox" placeholder="Hyperlink">
+          </ng-container>
+          
         </div>
 
-        <!-- <button type="button" (click)="addHyperlink()">
+        <button type="button" (click)="addHyperlink()">
           Add Hyperlink
-        </button> -->
+        </button>
+
+        <button type="button" (click)="removeHyperlink()">
+          Remove Hyperlink
+        </button>
 
         <button class="mainButton" type="submit" 
 					[disabled]="!messageForm.valid">

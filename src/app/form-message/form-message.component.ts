@@ -14,16 +14,17 @@ export class FormMessageComponent implements OnInit {
    * -Use an ngFor to display each hyperlink
   */
 
-  private messageForm: FormGroup;
+  private readonly messageForm: FormGroup;
+  public hyperlinks: Array<string> = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private readonly fb: FormBuilder) {
     this.messageForm = this.fb.group({
       to: [null, [Validators.required, Validators.email]],
       cc: [null, Validators.email],
       bcc: [null, Validators.email],
       subject: null,
-      message: [null, Validators.required]
-      // hyperlinks: new Array<string>("")
+      message: [null, Validators.required],
+      hyperlinks: []
     });
   }
 
@@ -31,11 +32,19 @@ export class FormMessageComponent implements OnInit {
   }
 
   onSubmit() {
+    this.messageForm.controls.hyperlinks.setValue(this.hyperlinks);
+    console.log(this.hyperlinks);
     console.log(this.messageForm.value);
   }
   
-  // addHyperlink() {
-  //   this.messageForm.value.hyperlinks.push("");
-  // }
+  addHyperlink() {
+    this.hyperlinks.push("");
+    console.log(this.messageForm.value);
+  }
+
+  removeHyperlink() {
+    this.hyperlinks.pop();
+    console.log(this.messageForm.value);
+  }
 
 }

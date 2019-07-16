@@ -16,19 +16,23 @@
 
           <textarea rows="8" formControlName="message" class="form-control messageFormTextBox" placeholder="Message"></textarea>
 
-          <ng-container *ngFor="let link of hyperlinks">
-              <input type="text" [value]="link" class="form-control messageFormTextBox" placeholder="Hyperlink">
-          </ng-container>
+          <div formArrayName="hyperlinks">
+            <div *ngFor="let link of hyperlinks.controls; let i=index">
+              <input type="text" [formControlName]="i" class="form-control messageFormTextBox" placeholder="Hyperlink">
+            </div>
+          </div>
           
         </div>
 
-        <button type="button" (click)="addHyperlink()">
-          Add Hyperlink
-        </button>
-
-        <button type="button" (click)="removeHyperlink()">
-          Remove Hyperlink
-        </button>
+        <div class="row" id="buttonRow">
+          <button id="addHyperlinkButton" type="button" class="messageFormButton" (click)="addHyperlink()">
+            Add Hyperlink
+          </button>
+  
+          <button id="removeHyperlinkButton" type="button" class="messageFormButton" (click)="removeHyperlink()">
+            Remove Hyperlink
+          </button>
+        </div>
 
         <button class="mainButton" type="submit" 
 					[disabled]="!messageForm.valid">

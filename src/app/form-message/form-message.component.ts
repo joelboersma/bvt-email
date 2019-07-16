@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-form-message',
@@ -7,44 +7,36 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form-message.component.scss']
 })
 export class FormMessageComponent implements OnInit {
-  /** 
-   * For hyperlinks do the following:
-   * -Make an "add hyperlink" button
-   * -Have the form include an array of strings for hyperlinks.
-   * -Use an ngFor to display each hyperlink
-  */
-
   private readonly messageForm: FormGroup;
-  public hyperlinks: Array<string> = [];
-
-  constructor(private readonly fb: FormBuilder) {
+  
+  constructor(private fb: FormBuilder) {
     this.messageForm = this.fb.group({
       to: [null, [Validators.required, Validators.email]],
       cc: [null, Validators.email],
       bcc: [null, Validators.email],
       subject: null,
       message: [null, Validators.required],
-      hyperlinks: []
+      hyperlinks: this.fb.array([])
     });
   }
 
   ngOnInit() {
   }
 
+  get hyperlinks() {
+    return this.messageForm.get('hyperlinks') as FormArray;
+  }
+
   onSubmit() {
-    this.messageForm.controls.hyperlinks.setValue(this.hyperlinks);
-    console.log(this.hyperlinks);
     console.log(this.messageForm.value);
   }
   
   addHyperlink() {
-    this.hyperlinks.push("");
-    console.log(this.messageForm.value);
+    this.hyperlinks.push(this.fb.control(""));
   }
 
   removeHyperlink() {
-    this.hyperlinks.pop();
-    console.log(this.messageForm.value);
+    this.hyperlinks.removeAt(this.hyperlinks.length - 1);
   }
 
 }

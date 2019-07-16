@@ -13,6 +13,7 @@
 .form-group {
   border: 1px solid #444444;
   padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .messageFormTextBox {
@@ -22,6 +23,26 @@
   border-radius: 0;
   color: $color-text;
   margin-bottom: 0px;
+}
+
+#buttonRow {
+  display: flex;
+  margin-left: 0px;
+  margin-right: 0px;
+  justify-content: space-between;
+}
+
+.messageFormButton {
+  border: none;
+  color: $color-text;
+}
+
+#addHyperlinkButton {
+  background-color: green
+}
+
+#removeHyperlinkButton {
+  background-color: red;
 }
 
 textarea {

@@ -18,12 +18,31 @@ img {
 
 #ButtonRow {
     position: absolute;
-    left: 50px;
+    left: 35px;
     bottom: 0px;
+    justify-content: center;
 }
 
 #Groups {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+}
+
+.bottomButton {
+    background-color: $color-accent;
+    border: none;
+    border-radius: 10px;
+    color: $color-text;
+    font-size: 18px;
+    padding: 10px;
+    width: 100px;
+}
+
+.bottomButton:hover {
+    background-color: $color-hover;
+}
+
+.col-6 {
+    width: 100%;
 }
 
 button {

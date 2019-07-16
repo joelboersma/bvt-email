@@ -42,8 +42,16 @@
   background-color: green
 }
 
+#addHyperlinkButton:hover {
+  background-color: rgb(0, 165, 0);
+}
+
 #removeHyperlinkButton {
-  background-color: red;
+  background-color: rgb(165, 0, 0);
+}
+
+#removeHyperlinkButton:hover {
+  background-color: rgb(255, 0, 0);
 }
 
 textarea {

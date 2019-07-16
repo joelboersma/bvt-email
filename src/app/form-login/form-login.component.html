@@ -1,6 +1,9 @@
 <div class="container-fluid d-flex justify-content-center align-items-center">
 	<div class="row justify-content-center">
     <div class="col form-box">
+			<a class="exitButton" routerLink="/">
+        <i class="fa fa-times"></i>
+      </a>
 			<h2 class="formTitle">Welcome back!</h2>
 
 			<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -18,14 +21,19 @@
 					</span>
 				</div>
 
-				<button class="mainButton" type="submit" 
+				<a routerLink="/">
+					<button class="mainButton" type="submit" 
 					[disabled]="!loginForm.valid">
 					Log In
-				</button>
+					</button>
+				</a>
 
 			</form>
 
-			<p class="formSecondary">Don't have an account? Sign up.</p>
+			<p class="formSecondary">
+				Don't have an account? &nbsp;
+				<a routerLink="/signup">Sign up</a>.
+			</p>
 
     </div>   
 	</div>

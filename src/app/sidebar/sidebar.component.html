@@ -22,17 +22,32 @@
     <!-- New Message -->
     <div class="row">
         <div class="col">
-            <button type="button" class="mainButton" appColorChange>New Message</button>
+            <a routerLink="/newmessage">
+                <button type="button" class="mainButton" appColorChange>New Message</button>
+            </a>
         </div>
     </div>
 
     <!-- Groups -->
-    <div *ngFor="let menuItem of menuItems">
-        <app-menu-item 
-        [name]="menuItem.name"
-        [icon]="menuItem.icon"
-        [badgeNum]="menuItem.badgeNum">
-        </app-menu-item>
+    <div id="Groups">
+        <div *ngFor="let menuItem of menuItems">
+            <app-menu-item 
+            [name]="menuItem.name"
+            [icon]="menuItem.icon"
+            [badgeNum]="menuItem.badgeNum">
+            </app-menu-item>
+        </div>
+    </div>
+    
+
+    <!-- Login/Signup buttons -->
+    <div id="ButtonRow" class="row">
+        <a routerLink="/login">
+            <button>Log In</button>
+        </a>
+        <a routerLink="/signup">
+            <button>Sign Up</button>
+        </a>
     </div>
 
 </div>

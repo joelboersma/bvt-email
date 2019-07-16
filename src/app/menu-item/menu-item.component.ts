@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ConvertPropertyBindingResult } from '@angular/compiler/src/compiler_util/expression_converter';
 
 @Component({
   selector: 'app-menu-item',

@@ -1,10 +1,11 @@
 @import '../content.scss';
 
 #TopBar {
+    // display: flex;
     align-items: center;
     // border: 2px $color-accent solid;
     height: 50px;
-    justify-content: center;
+    // justify-content: center;
     // margin-bottom: 20px;
 }
 
@@ -26,6 +27,11 @@
         padding-left: 5px;
         width: 87%;
     }    
+}
+
+.col-1 {
+    display: flex;
+    justify-content: center;
 }
 
 

@@ -7,17 +7,18 @@
       <h2 class="formTitle">New Message</h2>
       <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
 
+        <!-- Form entries -->
         <div class="form-group">
 
-          <input type="text" formControlName="to" class="form-control messageFormTextBox" placeholder="To">
+          <input type="text" formControlName="to" class="form-control messageFormTextBox" placeholder="To (required)" (blur)="changeError()">
 
-          <input type="text" formControlName="cc" class="form-control messageFormTextBox" placeholder="CC">
+          <input type="text" formControlName="cc" class="form-control messageFormTextBox" placeholder="CC" (blur)="changeError()">
 
-          <input type="text" formControlName="bcc" class="form-control messageFormTextBox" placeholder="BCC">
+          <input type="text" formControlName="bcc" class="form-control messageFormTextBox" placeholder="BCC" (blur)="changeError()">
 
-          <input type="text" formControlName="subject" class="form-control messageFormTextBox" placeholder="Subject">
+          <input type="text" formControlName="subject" class="form-control messageFormTextBox" placeholder="Subject" (blur)="changeError()">
 
-          <textarea rows="8" formControlName="message" class="form-control messageFormTextBox" placeholder="Message"></textarea>
+          <textarea rows="8" formControlName="message" class="form-control messageFormTextBox" placeholder="Message (required)" (blur)="changeError()"></textarea>
 
           <div formArrayName="hyperlinks">
             <div *ngFor="let link of hyperlinks.controls; let i=index">
@@ -27,6 +28,7 @@
           
         </div>
 
+        <!-- Buttons for adding and removing hyperlinks -->
         <div class="row" id="buttonRow">
           <button id="addHyperlinkButton" type="button" class="messageFormButton" (click)="addHyperlink()">
             Add Hyperlink
@@ -37,6 +39,12 @@
           </button>
         </div>
 
+        <!-- Error messages -->
+        <div id="ErrorMessage">
+          {{ errorMessage }}
+        </div>
+
+        <!-- Send button -->
         <a routerLink="/">
           <button class="mainButton" type="submit" 
           [disabled]="!messageForm.valid">

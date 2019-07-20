@@ -80,7 +80,11 @@
     margin-bottom: 0;
 }
 
-.exitButton {
+.exitButton:hover {
+    color: $color-hover;
+}
+
+.exitButtonLine {
   display: flex;
   justify-content: flex-end;
 }

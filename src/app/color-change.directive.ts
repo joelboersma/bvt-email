@@ -14,20 +14,26 @@ export class ColorChangeDirective {
     var textG = Math.floor(Math.random() * 256);
     var textB = Math.floor(Math.random() * 256);
 
-    // Generate Background Color Values
-    var backgroundR = Math.floor(Math.random() * 256);
-    var backgroundG = Math.floor(Math.random() * 256);
-    var backgroundB = Math.floor(Math.random() * 256);
+    // // Generate Background Color Values
+    // var backgroundR = Math.floor(Math.random() * 256);
+    // var backgroundG = Math.floor(Math.random() * 256);
+    // var backgroundB = Math.floor(Math.random() * 256);
 
     // Apply Styles
-    this.applyStyles(
-      'rgb(' + textR + ', ' + textG +', ' + textB + ')',
-      'rgb(' + backgroundR + ', ' + backgroundG +', ' + backgroundB + ')'
-      )
+    // this.applyStyles(
+    //   'rgb(' + textR + ', ' + textG +', ' + textB + ')',
+    //   'rgb(' + backgroundR + ', ' + backgroundG +', ' + backgroundB + ')'
+    // );
+
+    this.applyTextStyles('rgb(' + textR + ', ' + textG +', ' + textB + ')');
   }
 
   applyStyles(textColor: string, backgroundColor: string): void {
     this.el.nativeElement.style.color = textColor;
     this.el.nativeElement.style.backgroundColor = backgroundColor;
+  }
+
+  applyTextStyles(textColor: string): void {
+    this.el.nativeElement.style.color = textColor;
   }
 }

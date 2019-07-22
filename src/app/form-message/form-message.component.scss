@@ -54,6 +54,11 @@
   background-color: rgb(255, 0, 0);
 }
 
+#ErrorMessage {
+  color: $color-error;
+  margin-top: 15px;
+}
+
 textarea {
   resize: none;
   width: 100%;

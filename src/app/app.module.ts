@@ -16,6 +16,11 @@ import { MenuItemComponent } from './menu-item/menu-item.component';
 // import { FormSignupComponent } from './form-signup/form-signup.component';
 // import { FormMessageComponent } from './form-message/form-message.component';
 import { HomeComponent } from './home/home.component';
+import { EmailService } from './_services/email.service';
+import { RestService } from './_services/rest.service';
+import { AuthService } from './_services/auth.service';
+import { AuthGuardService } from './_services/auth-guard.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -24,7 +29,8 @@ const routes: Routes = [
     pathMatch: 'full',
     data: {
       title: 'KeanuMail'
-    }
+    },
+    canActivate: [AuthGuardService]
   },
   {
     path: 'login',
@@ -59,9 +65,15 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     // ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    EmailService,
+    RestService,
+    AuthService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

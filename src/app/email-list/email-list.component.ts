@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailService } from '../_services/email.service';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-email-list',
@@ -13,7 +15,9 @@ export class EmailListComponent implements OnInit {
     color: '#3579c7'
   }
 
-  public emails = [
+  public emails: Array<any> = [];
+  public apiEmails: Array<any> = [];
+  public readonly myEmails = [
     {
       subject: "Childcare",
       sender: "Peter Fisher",
@@ -48,10 +52,35 @@ export class EmailListComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private readonly emailService: EmailService,
+    private readonly auth: AuthService
+  ) { }
 
   ngOnInit() {
+    this.emailService.getEmails().then(data => {
+       // Copy emails from API into apiEmails
+      this.apiEmails = data;
+      
+      // Use whatever fields possible from apiEmails.
+      // The missing ones come from myEmails.
+      this.emails = this.myEmails;
+      while (this.apiEmails.length != this.emails.length) {
+        this.emails.pop();
+      }
+      this.emails.forEach(email => {
+        email.subject = this.apiEmails[email.listPos].subject;
+        email.message = this.apiEmails[email.listPos].body;
+        console.log(email);
+      });
+    });
 
+    // console.log(this.auth.getUserId());
+    // console.log(this.myEmails[0].subject);
+    // console.log(this.apiEmails[0].subject);
+    
+    // Fill in missing attributes
+    
   }
 
   markRead(pos: number) {

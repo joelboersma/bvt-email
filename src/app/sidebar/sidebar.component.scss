@@ -16,18 +16,11 @@ img {
     font-size: 14px;
 }
 
-#ButtonRow {
-    position: absolute;
-    left: 35px;
-    bottom: 0px;
-    justify-content: center;
-}
-
 #Groups {
     margin-bottom: 70px;
 }
 
-.bottomButton {
+.logoutButton {
     background-color: $color-accent;
     border: none;
     border-radius: 10px;
@@ -35,14 +28,15 @@ img {
     font-size: 18px;
     padding: 10px;
     width: 100px;
+
+    position: absolute;
+    left: 35px;
+    bottom: 0px;
+    justify-content: center;
 }
 
-.bottomButton:hover {
+.logoutButton:hover {
     background-color: $color-hover;
-}
-
-.col-6 {
-    width: 100%;
 }
 
 button {

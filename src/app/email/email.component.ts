@@ -16,9 +16,7 @@ export class EmailComponent implements OnInit {
   public read: boolean = false;
   @Output() readEmit: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() {
-    
-  }
+  constructor() {}
 
   ngOnInit() {
     

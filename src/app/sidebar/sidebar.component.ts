@@ -1,4 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { AuthService } from '../_services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -36,7 +38,10 @@ export class SidebarComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private readonly auth: AuthService,
+    private readonly router: Router
+  ) { }
 
   ngOnInit() {
     this.windowWidth = window.innerWidth;
@@ -51,4 +56,9 @@ export class SidebarComponent implements OnInit {
     return this.windowWidth >= 768;
   }
 
+  logout(): void {
+    this.auth.logout();
+    console.log(this.auth.getUserId());
+    this.router.navigate(['/login'])
+  }
 }

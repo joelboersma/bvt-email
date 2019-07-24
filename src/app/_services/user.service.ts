@@ -13,6 +13,10 @@ export class UserService {
   ) {}
 
   userExist(email: string): boolean {
-    return this.rest.get(environment.apiURL + "users?email=" + email) != null;
+    return this.getUser(email) != null;
+  }
+
+  getUser(email: string) {
+    return this.rest.get(environment.apiURL + "/users?email=" + email)
   }
 }

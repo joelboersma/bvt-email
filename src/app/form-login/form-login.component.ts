@@ -31,23 +31,24 @@ export class FormLoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
+  onSubmit(): void {
     console.log(this.loginForm.value);
-    this.handleLogIn();
-
-    this.userExist = this.userService.userExist(this.loginForm.controls.email.value);
-
-    this.router.navigate(['/']);
+    this.handleLogIn();    
   }
 
-  handleLogIn() {
+  handleLogIn(): Promise<void> {
     const form = this.loginForm.value;
 
     return this.rest.get(environment.apiURL + `/users?email=${form.email}&password=${form.password}`)
     .then(res => {
-      const userId = res[0].id;
-      console.log('userId', userId);
-      this.auth.setUserId(userId);
+      this.userExist = this.userService.userExist(this.loginForm.controls.email.value);
+      console.log("userExist", this.userExist);
+      if (this.userExist) {
+        const userId = res[0].id;
+        console.log('userId', userId);
+        this.auth.setUserId(userId);
+        this.router.navigate(['/']);
+      }
     })
   }
 

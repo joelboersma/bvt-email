@@ -71,7 +71,6 @@ export class EmailListComponent implements OnInit {
       this.emails.forEach(email => {
         email.subject = this.apiEmails[email.listPos].subject;
         email.message = this.apiEmails[email.listPos].body;
-        console.log(email);
       });
     });
 

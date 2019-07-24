@@ -25,6 +25,6 @@ export class AuthService {
   logout(): void {
     this.userId = null;
     localStorage.removeItem(this.userIdKey);
-    console.log(this.userId);
+    console.log("userId", this.userId);
   }
 }

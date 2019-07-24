@@ -21,12 +21,14 @@
 					</span>
 				</div>
 
-				<!-- <a routerLink="/"> -->
+				<div id="UserNotExist" *ngIf="userExist">
+					This user does not exist!
+				</div>
+
 				<button class="mainButton" type="submit" 
 					[disabled]="!loginForm.valid">
 					Log In
 				</button>
-				<!-- </a> -->
 
 			</form>
 

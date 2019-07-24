@@ -11,3 +11,12 @@
     margin-left: 15%;
     margin-right: 15%;
 }
+
+#UserNotExist {
+    display: flex;
+    justify-content: center;
+
+    color: $color-error;
+    font-size: 18px;
+    margin-top: 25px;
+}

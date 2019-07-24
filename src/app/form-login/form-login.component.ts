@@ -4,6 +4,8 @@ import { RestService } from '../_services/rest.service';
 import { environment } from 'src/environments/environment';
 import { AuthService } from '../_services/auth.service';
 import { Router } from '@angular/router';
+import { AuthGuardService } from '../_services/auth-guard.service';
+import { UserService } from '../_services/user.service';
 
 @Component({
   selector: 'app-form-login',
@@ -12,12 +14,14 @@ import { Router } from '@angular/router';
 })
 export class FormLoginComponent implements OnInit {
   public loginForm: FormGroup;
+  public userExist: boolean = false;
 
   constructor(
     private readonly fb: FormBuilder,
     private readonly router: Router,
     private readonly rest: RestService,
-    private readonly auth: AuthService) {
+    private readonly auth: AuthService,
+    private readonly userService: UserService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]]
@@ -30,6 +34,9 @@ export class FormLoginComponent implements OnInit {
   onSubmit() {
     console.log(this.loginForm.value);
     this.handleLogIn();
+
+    this.userExist = this.userService.userExist(this.loginForm.controls.email.value);
+
     this.router.navigate(['/']);
   }
 

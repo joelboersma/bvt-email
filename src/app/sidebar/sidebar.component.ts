@@ -14,7 +14,7 @@ export class SidebarComponent implements OnInit {
     {
       name: "Inbox",
       icon: "fa-caret-down",
-      badgeNum: 4
+      badgeNum: 6
     },
     {
       name: "Drafts",

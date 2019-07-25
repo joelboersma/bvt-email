@@ -34,13 +34,10 @@
 					<span *ngIf="signupForm.get('retypePassword').touched && !passwordMatch()" class="formError">Passwords do not match</span>
 				</div>
 
-				<a routerLink="/">
-					<button class="mainButton" type="submit" 
-					[disabled]="!signupForm.valid || !passwordMatch()">
+				<button class="mainButton" type="submit" 
+				[disabled]="!signupForm.valid || !passwordMatch()">
 					Sign Up
-					</button>
-				</a>
-				
+				</button>
 
 			</form>
 

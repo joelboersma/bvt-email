@@ -1,12 +1,16 @@
 @import '../content.scss';
 
+.container-fluid {
+    background-color: $color-primary;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 #TopBar {
-    // display: flex;
     align-items: center;
-    // border: 2px $color-accent solid;
     height: 50px;
-    // justify-content: center;
-    // margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #SearchBar {

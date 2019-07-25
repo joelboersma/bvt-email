@@ -4,7 +4,6 @@ import { RestService } from '../_services/rest.service';
 import { environment } from 'src/environments/environment';
 import { AuthService } from '../_services/auth.service';
 import { Router } from '@angular/router';
-import { AuthGuardService } from '../_services/auth-guard.service';
 import { UserService } from '../_services/user.service';
 
 @Component({

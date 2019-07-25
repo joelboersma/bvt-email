@@ -52,7 +52,7 @@ export class EmailListComponent implements OnInit {
     },
     {
       subject: "Final Remarks",
-      sender: "Spanish Soldier",
+      sender: "French Soldier",
       date: "March 4, 1563",
       message: "Your mother was a hamster, and your father smelt of elderberries!",
       listPos: 4,

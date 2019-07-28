@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-message',
@@ -10,7 +11,10 @@ export class FormMessageComponent implements OnInit {
   private readonly messageForm: FormGroup;
   public errorMessage: string = ""
   
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly router: Router
+  ) {
     this.messageForm = this.fb.group({
       to: [null, [Validators.required, Validators.email]],
       cc: [null, Validators.email],
@@ -34,6 +38,7 @@ export class FormMessageComponent implements OnInit {
 
   onSubmit(): void {
     console.log(this.messageForm.value);
+    this.router.navigate(['/']);
   }
   
   addHyperlink(): void {

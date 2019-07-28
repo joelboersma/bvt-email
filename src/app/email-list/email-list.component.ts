@@ -65,6 +65,14 @@ export class EmailListComponent implements OnInit {
       message: "I'll have two number nines, a number nine large, a number six with extra dip, a number seven, two number 45s, one with cheese, and a large soda.",
       listPos: 5,
       style: this.styleUnread
+    },
+    {
+      subject: "Jebaited",
+      sender: "Alex Jebailey",
+      date: "July 28",
+      message: "KAPPA OUTDATED, POGCHAMP OVERRATED, LONG HAVE WE WAITED, NOW WE JEBAITED",
+      listPos: 6,
+      style: this.styleUnread
     }
   ];
 
